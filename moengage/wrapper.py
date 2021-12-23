@@ -13,17 +13,20 @@ class Moengage:
             "MOE-APPKEY": self.app_id,
         }
 
-    def create_or_update_user(self, auth_id, name, phone_number, email=None, **kwargs):
+    def create_or_update_user(self, auth_id, name=None, phone_number=None, email=None, **kwargs):
         try:
             data = {
                 "type": "customer",
                 "customer_id": auth_id,
                 "attributes": {
-                    "name": name,
-                    "mobile": phone_number,
-                    "email": email,
                 }
             }
+            if name is not None:
+                data["attributes"]['name'] = name
+            if phone_number is not None:
+                data["attributes"]['mobile'] = phone_number
+            if email is not None:
+                data["attributes"]['email'] = email
             for key, val in kwargs.items():
                 data["attributes"][key] = val
             response = requests.post(
