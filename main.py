@@ -14,9 +14,9 @@ def test_publish_event(moengage):
 
 
 if __name__ == '__main__':
-    # print_hi('PyCharm')
-    mo = Moengage("https://api-03.moengage.com", "5UQZMM1CD3E1XU2B5FG7AKEI_DEBUG", "XKFoic6P6MqAdC7FkjhmaEwN")
+    # print_hi('World')
+    mo = Moengage("<base-url>", "<app_id>", "<api_key>")
     test_create_user(mo)
-    test_publish_event(mo)
+    # test_publish_event(mo)
 
 

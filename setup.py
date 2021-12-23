@@ -1,14 +1,21 @@
-from distutils.core import setup
+from setuptools import setup
+import pathlib
+
+HERE = pathlib.Path(__file__).parent
+README = (HERE / "README.md").read_text()
+
 setup(
   name='moengage',
   packages=['moengage'],
-  version='0.1',
+  version='0.3',
   license='MIT',
   description='Wrapper library for calling Moengage APIs in python',
+  long_description=README,
+  long_description_content_type="text/markdown",
   author='Deepanshu Gupta',
   author_email='deepanshu71095@gmail.com',
   url='https://github.com/Deepanshu07/moengage',
-  download_url='https://github.com/Deepanshu07/moengage/archive/refs/tags/v0.1.tar.gz',
+  download_url='https://github.com/Deepanshu07/moengage/archive/refs/tags/v0.3.tar.gz',
   keywords=['MOENGAGE', 'MOENGAGE WRAPPER'],
   install_requires=[
           'asgiref',
