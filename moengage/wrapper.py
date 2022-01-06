@@ -37,7 +37,7 @@ class Moengage:
             )
             response_json = response.json()
             if response_json["status"] == "fail":
-                raise MoengageAPIException(response_json["error"]["message"])
+                raise MoengageAPIException("Moengage API error : "+response_json["error"]["message"])
         except MoengageAPIException as e:
             raise e
         except Exception as e:
@@ -66,7 +66,7 @@ class Moengage:
             )
             response_json = response.json()
             if response_json["status"] == "fail":
-                raise MoengageAPIException(response_json["error"]["message"])
+                raise MoengageAPIException("Moengage API error : "+response_json["error"]["message"])
         except MoengageAPIException as e:
             raise e
         except Exception as e:
