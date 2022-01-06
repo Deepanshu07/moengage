@@ -35,8 +35,9 @@ class Moengage:
                 headers=self.headers,
                 json=data,
             )
-            if response.status_code != 200:
-                raise MoengageAPIException(f"moengage user api returned {response.status_code}")
+            response_json = response.json()
+            if response_json["status"] == "fail":
+                raise MoengageAPIException(response_json["error"]["message"])
         except MoengageAPIException as e:
             raise e
         except Exception as e:
@@ -63,8 +64,9 @@ class Moengage:
                 headers=self.headers,
                 json=data,
             )
-            if response.status_code != 200:
-                raise MoengageAPIException(f"moengage event api returned {response.status_code}")
+            response_json = response.json()
+            if response_json["status"] == "fail":
+                raise MoengageAPIException(response_json["error"]["message"])
         except MoengageAPIException as e:
             raise e
         except Exception as e:
