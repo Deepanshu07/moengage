@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 setup(
   name='moengage',
   packages=['moengage'],
-  version='0.3',
+  version='0.3.4',
   license='MIT',
   description='Wrapper library for calling Moengage APIs in python',
   long_description=README,
@@ -15,7 +15,7 @@ setup(
   author='Deepanshu Gupta',
   author_email='deepanshu71095@gmail.com',
   url='https://github.com/Deepanshu07/moengage',
-  download_url='https://github.com/Deepanshu07/moengage/archive/refs/tags/v0.3.tar.gz',
+  download_url='https://github.com/Deepanshu07/moengage/archive/refs/tags/v0.3.4.tar.gz',
   keywords=['MOENGAGE', 'MOENGAGE WRAPPER'],
   install_requires=[
           'asgiref',
